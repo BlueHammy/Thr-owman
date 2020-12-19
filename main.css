@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Voltaire');
+@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
 
 html, body {
   height: 100%;
@@ -20,12 +20,12 @@ blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, t
   position: absolute;
   width:100%;
   height: 100%;
-  background-color: #dbe6e6;
+  background-color: #9DFFF7;
   overflow: hidden;
 }
 
 
-#gameoverInstructions{
+/* #gameoverInstructions{
   position:absolute;
   font-family:'Voltaire', sans-serif;
   font-weight:bold;
@@ -45,7 +45,7 @@ blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, t
   opacity:1;
   transform : translate(-50%,-50%);
   transition: all 500ms ease-in-out;
-}
+} */
 
 
 #dist{
@@ -58,22 +58,49 @@ blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, t
 
 .label{
   position:relative;
-  font-family:'Voltaire', sans-serif;
+  font-family:'Langar', sans-serif;
   text-transform:uppercase;
-  color:#ffa873;
-  font-size:12px;
+  color:#E5611A;
+  font-size:14px;
   letter-spacing:2px;
   text-align:center;
-  margin-bottom:5px;
+  margin-bottom:-10px;
 }
 
+#throwmanLabel{
+
+  position:absolute;
+  width:200%;
+  bottom:0;
+  margin: auto;
+  margin-bottom:50px;
+  font-family:'Langar', sans-serif;
+  color:#E5611A;
+  font-size:16px;
+  letter-spacing:1px;
+  text-transform: uppercase;
+  transform:translate(-318%,-60%);
+  user-select: none;
+
+}
+
+
+#throwmenCounter{
+
+  text-transform:uppercase;
+  color:#030D68;
+  font-size:30px;
+  font-family:'Langar';
+  transform:translate(-600%,-60%);
+
+}
 
 #distValue{
   position:relative;
   text-transform:uppercase;
-  color:#dc5f45;
+  color:#030D68;
   font-size:40px;
-  font-family:'Voltaire';
+  font-family:'Langar';
   text-align:center;
 }
 
@@ -83,8 +110,8 @@ blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, t
   bottom:0;
   margin: auto;
   margin-bottom:50px;
-  font-family:'Voltaire', sans-serif;
-  color:#dc5f45;
+  font-family:'Langar', sans-serif;
+  color:#E5611A;
   font-size:16px;
   letter-spacing:1px;
   text-transform: uppercase;
@@ -92,5 +119,5 @@ blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, t
   user-select: none;
 }
 .lightInstructions {
-  color:#5f9042;
+  color:#2C8B10;
 }
