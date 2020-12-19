@@ -79,11 +79,27 @@ blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, t
   font-size:16px;
   letter-spacing:1px;
   text-transform: uppercase;
-  transform:translate(-318%,-60%);
+  transform:translate(-318%,-30%);
   user-select: none;
 
 }
 
+#snowBallLabel{
+
+  position:absolute;
+  width:200%;
+  bottom:0;
+  margin: auto;
+  margin-bottom:50px;
+  font-family:'Langar', sans-serif;
+  color:#E5611A;
+  font-size:16px;
+  letter-spacing:1px;
+  text-transform: uppercase;
+  transform:translate(300%,0%);
+  user-select: none;
+
+}
 
 #throwmenCounter{
 
@@ -92,6 +108,16 @@ blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, t
   font-size:30px;
   font-family:'Langar';
   transform:translate(-600%,-60%);
+
+}
+
+#snowBallSize{
+
+  text-transform:uppercase;
+  color:#030D68;
+  font-size:30px;
+  font-family:'Langar';
+  transform:translate(635%,-150%);
 
 }
 
@@ -120,4 +146,13 @@ blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, t
 }
 .lightInstructions {
   color:#2C8B10;
+}
+
+#particles-js{
+  width: 100%;
+  height: 100%;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }

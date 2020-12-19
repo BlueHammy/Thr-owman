@@ -15,12 +15,39 @@
         <div id="throwmanLabel">Thr-owmen</div>
         <div id="distValue">0000</div>
         <div id="throwmenCounter">00</div>
+        <div id="snowBallSize">000</div>
+        <div id="snowBallLabel">Snowball Size</div>
     </div>
+
+    <!-- count particles -->
+    <div class="count-particles">
+      <span class="js-count-particles"></span>
+    </div>
+
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+
 
     <div id="instructions">Throw Your Snowball!<span class="lightInstructions"> — Gather The Snow / Throw Your Snowball Forwards!</span></div>
 
+    <script>
+    document.getElementById("particles-js").addEventListener("mousemove", function(event) {
+      myFunction(event);
+    });
+
+    function myFunction(e) {
+      var x = e.clientX;
+      var y = e.clientY;
+      var coor = "Coordinates: (" + x + "," + y + ")";
+    console.log(coor);
+    }
+    </script>
+
+    <script src="particles.js/particles.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r80/three.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-    <script src="main.js"></script>
+    <script src="main.js" defer="defer"></script>
+
+
 </body>
 </html>
