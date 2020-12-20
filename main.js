@@ -1,5 +1,6 @@
 var WIDTH = window.innerWidth;
 var HEIGHT = window.innerHeight;
+var fieldDistance;
 
 var renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize(WIDTH, HEIGHT);
@@ -157,10 +158,15 @@ particlesJS('particles-js',
 var light = new THREE.AmbientLight(0xffffff);
 scene.add(light);
 
+function initUI() {
+    fieldDistance = document.getElementById("distValue");
+  }
+
 function render() {
 
     requestAnimationFrame(render);
     renderer.render(scene, camera);
+    initUI();
 }
 
 render();
