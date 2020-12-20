@@ -6,8 +6,38 @@
     <title>Thr-owman</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+      <script>
+
+      var x;
+      var y;
+
+
+      // function mousePosition(e) {
+      //   x = e.clientX;
+      //   y = e.clientY;
+      //   var coor = "Coordinates: (" + x + "," + y + ")";
+      //
+      //
+      // //console.log(coor
+      // }
+
+        function countSnowball(){
+        var snowBallCounter = 0
+        document.getElementById("snowBallCounter").innerHTML = snowBallCounter;
+              // for (snowBallCounter = 0; snowBallCounter < 100 ; snowBallCounter++) {
+              //     document.getElementById("snowBallCounter").innerHTML = snowBallCounter;
+              //         console.log(snowBallCounter);
+              //
+              // }
+
+
+        }
+        </script>
+
+
 </head>
-<body>
+<body onload="countSnowball()">
 
     <div id="world" />
     <div id="dist">
@@ -15,7 +45,7 @@
         <div id="throwmanLabel">Thr-owmen</div>
         <div id="distValue">0000</div>
         <div id="throwmenCounter">00</div>
-        <div id="snowBallSize">000</div>
+        //<div id="snowBallCounter">000</div>
         <div id="snowBallLabel">Snowball Size</div>
     </div>
 
@@ -30,18 +60,28 @@
 
     <div id="instructions">Throw Your Snowball!<span class="lightInstructions"> — Gather The Snow / Throw Your Snowball Forwards!</span></div>
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
     <script>
-    document.getElementById("particles-js").addEventListener("mousemove", function(event) {
-      myFunction(event);
+
+    var handler = function(e) {
+    console.log(`Mouse at: X:${e.screenX} Y:${e.screenY}`);
+    countSnowball(snowBallCounter++);
+        console.log(countSnowball(snowBallCounter));
+
+    }
+
+    document.body.addEventListener('mousemove', function(e) {
+    //setTimeout(function() {
+    handler(e);
+    //}, 1000)
     });
 
-    function myFunction(e) {
-      var x = e.clientX;
-      var y = e.clientY;
-      var coor = "Coordinates: (" + x + "," + y + ")";
-    console.log(coor);
-    }
-    </script>
+    document.getElementById("particles-js").addEventListener("mousemove", function(event) {
+      handler(event);
+    });
+
+  </script>
 
     <script src="particles.js/particles.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r80/three.js"></script>
