@@ -1,6 +1,7 @@
 var WIDTH = window.innerWidth;
 var HEIGHT = window.innerHeight;
 var fieldDistance;
+var snowBallSize = 0;
 
 var renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize(WIDTH, HEIGHT);
@@ -20,118 +21,125 @@ var cube = new THREE.Mesh(boxGeometry, basicMaterial);
 scene.add(cube);
 cube.rotation.set(0.5, 0, 0);
 
-particlesJS('particles-js',
-{
-  "particles": {
-    "number": {
-      "value": 452,
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
-    },
-    "color": {
-      "value": "#ffffff"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
-    },
-    "opacity": {
-      "value": 0.873313463449028,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 108.1626766657053,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": false,
-      "distance": 0,
-      "color": "#ffffff",
-      "opacity": 0,
-      "width": 0
-    },
-    "move": {
-      "enable": true,
-      "speed": 4.807230074031347,
-      "direction": "none",
-      "random": true,
-      "straight": false,
-      "out_mode": "bounce",
-      "bounce": false,
-      "attract": {
-        "enable": true,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "window",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "repulse"
-      },
-      "onclick": {
-        "enable": false,
-        "mode": "remove"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 400,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": false
-}
-);
+var geometry = new THREE.SphereGeometry(5, 13, 7);
+//replace 85 with snowBallSize depending on the snowball size counter, when gets to 85 attach snowball to mouse so holding it.
+geometry.translate(0,3,85);
+var material = new THREE.MeshBasicMaterial({color: 0xffffff});
+var sphere = new THREE.Mesh(geometry, material);
+scene.add(sphere);
+
+// particlesJS('particles-js',
+// {
+//   "particles": {
+//     "number": {
+//       "value": 452,
+//       "density": {
+//         "enable": true,
+//         "value_area": 800
+//       }
+//     },
+//     "color": {
+//       "value": "#ffffff"
+//     },
+//     "shape": {
+//       "type": "circle",
+//       "stroke": {
+//         "width": 0,
+//         "color": "#000000"
+//       },
+//       "polygon": {
+//         "nb_sides": 5
+//       },
+//       "image": {
+//         "src": "img/github.svg",
+//         "width": 100,
+//         "height": 100
+//       }
+//     },
+//     "opacity": {
+//       "value": 0.873313463449028,
+//       "random": false,
+//       "anim": {
+//         "enable": false,
+//         "speed": 1,
+//         "opacity_min": 0.1,
+//         "sync": false
+//       }
+//     },
+//     "size": {
+//       "value": 108.1626766657053,
+//       "random": true,
+//       "anim": {
+//         "enable": false,
+//         "speed": 40,
+//         "size_min": 0.1,
+//         "sync": false
+//       }
+//     },
+//     "line_linked": {
+//       "enable": false,
+//       "distance": 0,
+//       "color": "#ffffff",
+//       "opacity": 0,
+//       "width": 0
+//     },
+//     "move": {
+//       "enable": true,
+//       "speed": 4.807230074031347,
+//       "direction": "none",
+//       "random": true,
+//       "straight": false,
+//       "out_mode": "bounce",
+//       "bounce": false,
+//       "attract": {
+//         "enable": true,
+//         "rotateX": 600,
+//         "rotateY": 1200
+//       }
+//     }
+//   },
+//   "interactivity": {
+//     "detect_on": "window",
+//     "events": {
+//       "onhover": {
+//         "enable": true,
+//         "mode": "repulse"
+//       },
+//       "onclick": {
+//         "enable": false,
+//         "mode": "remove"
+//       },
+//       "resize": true
+//     },
+//     "modes": {
+//       "grab": {
+//         "distance": 400,
+//         "line_linked": {
+//           "opacity": 1
+//         }
+//       },
+//       "bubble": {
+//         "distance": 400,
+//         "size": 40,
+//         "duration": 2,
+//         "opacity": 8,
+//         "speed": 3
+//       },
+//       "repulse": {
+//         "distance": 200,
+//         "duration": 0.4
+//       },
+//       "push": {
+//         "particles_nb": 4
+//       },
+//       "remove": {
+//         "particles_nb": 2
+//       }
+//     }
+//   },
+//   "retina_detect": false
+// }
+// );
 
 // const light = new THREE.PointLight( 0xff0000, 1, 100 );
 // light.position.set( 0, 0, 0 );
@@ -161,6 +169,7 @@ scene.add(light);
 function initUI() {
     fieldDistance = document.getElementById("distValue");
   }
+
 
 function render() {
 
